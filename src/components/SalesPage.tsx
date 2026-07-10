@@ -64,7 +64,11 @@ export function SalesPage() {
   };
 
   return (
-    <main id="top" className="min-h-screen overflow-hidden bg-[#f8f7f4] text-neutral-950 dark:bg-[#0f0f0f] dark:text-neutral-50">
+    <main
+      id="top"
+      data-locale={locale}
+      className="min-h-screen overflow-hidden bg-[#f8f7f4] text-neutral-950 dark:bg-[#0f0f0f] dark:text-neutral-50"
+    >
       <Header
         locale={locale}
         labels={copy.nav}
@@ -75,14 +79,18 @@ export function SalesPage() {
       <section className="mx-auto flex max-w-7xl flex-col px-5 pb-24 pt-20 sm:px-8 sm:pb-32 sm:pt-28 lg:min-h-[calc(100vh-76px)] lg:justify-center">
         <div className="fade-in grid gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-neutral-500 dark:text-neutral-400">
+            <p
+              className={`text-sm font-semibold text-neutral-500 dark:text-neutral-400 ${
+                locale === "zh" ? "tracking-[0.04em]" : "uppercase tracking-[0.28em]"
+              }`}
+            >
               {copy.hero.title}
             </p>
             <h1
-              className={`mt-7 max-w-4xl whitespace-nowrap font-semibold tracking-[-0.055em] text-neutral-950 dark:text-neutral-50 ${
+              className={`mt-7 max-w-4xl whitespace-nowrap font-semibold text-neutral-950 dark:text-neutral-50 ${
                 locale === "zh"
-                  ? "text-[2.75rem] sm:text-6xl lg:text-[4.25rem]"
-                  : "text-5xl sm:text-7xl lg:text-8xl"
+                  ? "text-[2.75rem] tracking-[0.05em] sm:text-6xl lg:text-[4.25rem]"
+                  : "text-5xl tracking-[-0.055em] sm:text-7xl lg:text-8xl"
               }`}
             >
               {copy.hero.name}
@@ -144,6 +152,7 @@ export function SalesPage() {
           eyebrow={copy.sections.projectsEyebrow}
           title={copy.sections.projectsTitle}
           description={copy.sections.projectsDescription}
+          locale={locale}
         />
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
           {projects.map((project) => (
@@ -162,6 +171,7 @@ export function SalesPage() {
           eyebrow={copy.sections.journeyEyebrow}
           title={copy.sections.journeyTitle}
           description={copy.sections.journeyDescription}
+          locale={locale}
         />
         <div className="mx-auto mt-16 grid max-w-5xl gap-5 md:grid-cols-3">
           {copy.journey.map((item, index) => (
@@ -169,7 +179,7 @@ export function SalesPage() {
               key={item.year}
               className="relative rounded-[1.75rem] border border-black/[0.08] bg-white/[0.72] p-7 shadow-sm dark:border-white/10 dark:bg-white/[0.04]"
             >
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
+              <p className={`text-sm font-semibold text-neutral-500 dark:text-neutral-400 ${locale === "en" ? "uppercase tracking-[0.2em]" : ""}`}>
                 {item.year}
               </p>
               <h3 className="mt-5 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
@@ -194,6 +204,7 @@ export function SalesPage() {
             eyebrow={copy.sections.contactEyebrow}
             title={copy.sections.contactTitle}
             description={copy.sections.contactDescription}
+            locale={locale}
           />
           <div className="mx-auto mt-12 flex max-w-3xl flex-wrap justify-center gap-3">
             {contactLinks.map((link) => (

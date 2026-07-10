@@ -77,3 +77,26 @@ button {
     transition-duration: 1ms !important;
   }
 }
+
+@layer utilities {
+  /* Chinese locale: site-wide comfortable glyph spacing (Inter + tracking-tight cramp CJK) */
+  [data-locale="zh"] {
+    letter-spacing: 0.04em;
+  }
+
+  [data-locale="zh"] h1,
+  [data-locale="zh"] h2,
+  [data-locale="zh"] h3 {
+    letter-spacing: 0.06em;
+  }
+
+  [data-locale="zh"] .tracking-tight {
+    letter-spacing: 0.06em;
+  }
+
+  /* Latin-only uppercase labels — don't stretch or uppercase CJK */
+  [data-locale="zh"] .uppercase {
+    letter-spacing: 0.05em;
+    text-transform: none;
+  }
+}
