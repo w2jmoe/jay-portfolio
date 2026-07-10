@@ -26,7 +26,7 @@ export function ProjectCard({ project, locale, actions }: ProjectCardProps) {
       <div className="border-b border-black/[0.06] bg-neutral-100/70 p-4 dark:border-white/10 dark:bg-white/[0.03]">
         <Image
           src={assetPath(project.screenshot)}
-          alt={`${projectName} screenshot`}
+          alt={`${projectName} — product screenshot`}
           width={1280}
           height={800}
           loading="lazy"
@@ -75,7 +75,7 @@ export function ProjectCard({ project, locale, actions }: ProjectCardProps) {
                 key={action.label}
                 href={action.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-neutral-800 transition hover:border-black/20 hover:bg-neutral-950 hover:text-white dark:border-white/10 dark:text-neutral-100 dark:hover:border-white/20 dark:hover:bg-white dark:hover:text-neutral-950"
               >
                 {action.label}

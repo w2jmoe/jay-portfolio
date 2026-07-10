@@ -9,6 +9,8 @@ const inter = Inter({
   display: "swap"
 });
 
+const basePath = process.env.GITHUB_PAGES_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: dictionary.en.meta.title,
@@ -23,6 +25,9 @@ export const metadata: Metadata = {
     "Founder",
     "Product Engineer"
   ],
+  icons: {
+    icon: `${basePath}/favicon.svg`
+  },
   alternates: {
     canonical: "/"
   },
@@ -31,10 +36,11 @@ export const metadata: Metadata = {
     description: dictionary.en.meta.description,
     url: "/",
     siteName: "Jay Wu",
-    type: "website"
+    type: "website",
+    locale: "en_US"
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: dictionary.en.meta.title,
     description: dictionary.en.meta.description
   }

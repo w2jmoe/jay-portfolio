@@ -7,6 +7,7 @@ type HeaderProps = {
     journey: string;
     contact: string;
     github: string;
+    ariaLabel: string;
   };
   githubUrl: string;
   onLocaleChange: (locale: Locale) => void;
@@ -27,7 +28,7 @@ export function Header({ locale, labels, githubUrl, onLocaleChange }: HeaderProp
         </a>
 
         <nav
-          aria-label="Primary navigation"
+          aria-label={labels.ariaLabel}
           className="order-3 flex w-full items-center gap-5 overflow-x-auto text-sm text-neutral-600 dark:text-neutral-300 sm:order-none sm:w-auto sm:gap-8"
         >
           {navItems.map((item) => (
@@ -67,7 +68,7 @@ export function Header({ locale, labels, githubUrl, onLocaleChange }: HeaderProp
           <a
             href={githubUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hidden rounded-full border border-black/10 bg-white/70 px-4 py-2 font-medium text-neutral-800 shadow-sm transition hover:border-black/20 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/20 sm:inline-flex"
           >
             {labels.github}

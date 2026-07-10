@@ -17,7 +17,7 @@ export type Project = {
   wechatHint?: LocalizedText;
 };
 
-export const siteUrl = "https://jaywu.dev";
+export const siteUrl = "https://w2jmoe.github.io/jay-portfolio";
 
 export const metrics = [
   {
@@ -162,7 +162,8 @@ export const dictionary = {
       projects: "Projects",
       journey: "Journey",
       contact: "Contact",
-      github: "GitHub"
+      github: "GitHub",
+      ariaLabel: "Primary navigation"
     },
     hero: {
       name: "Jay Wu · 武文杰",
@@ -220,6 +221,7 @@ export const dictionary = {
       resume: "Resume PDF"
     },
     wechat: {
+      ariaLabel: "Copy WeChat ID",
       copiedMessage: "WeChat ID copied.\nPlease mention where you found me.",
       copyFailed: "Could not copy. WeChat ID: bestyoucando"
     },
@@ -234,7 +236,8 @@ export const dictionary = {
       projects: "项目",
       journey: "历程",
       contact: "联系",
-      github: "GitHub"
+      github: "GitHub",
+      ariaLabel: "主导航"
     },
     hero: {
       name: "Jay Wu · 武文杰",
@@ -290,6 +293,7 @@ export const dictionary = {
       resume: "简历 PDF"
     },
     wechat: {
+      ariaLabel: "复制微信号",
       copiedMessage: "微信号已复制。\n请注明您在哪里看到我的信息。",
       copyFailed: "无法复制，微信号：bestyoucando"
     },

@@ -16,7 +16,8 @@ export function SalesPage() {
 
   useEffect(() => {
     document.documentElement.lang = locale === "zh" ? "zh-CN" : "en";
-  }, [locale]);
+    document.title = copy.meta.title;
+  }, [locale, copy.meta.title]);
 
   useEffect(() => {
     if (process.env.NODE_ENV !== "development") {
@@ -108,7 +109,7 @@ export function SalesPage() {
           <a
             href={profileLinks.github}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-black/10 bg-white/70 px-6 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:border-black/20 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/20"
           >
             {copy.hero.githubCta}
@@ -195,12 +196,12 @@ export function SalesPage() {
             description={copy.sections.contactDescription}
           />
           <div className="mx-auto mt-12 flex max-w-3xl flex-wrap justify-center gap-3">
-            {contactLinks.slice(0, 4).map((link) => (
+            {contactLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 className="rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:border-black/20 hover:bg-neutral-950 hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/20 dark:hover:bg-white dark:hover:text-neutral-950"
               >
                 {link.label}
@@ -209,6 +210,7 @@ export function SalesPage() {
             <button
               type="button"
               onClick={handleWeChatCopy}
+              aria-label={copy.wechat.ariaLabel}
               className="rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:border-black/20 hover:bg-neutral-950 hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/20 dark:hover:bg-white dark:hover:text-neutral-950"
             >
               {copy.contact.wechat}
