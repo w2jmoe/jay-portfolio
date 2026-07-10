@@ -33,36 +33,40 @@ npm run lint    # 代码检查
 
 ## 部署到 GitHub Pages
 
-项目已配置为静态导出，构建产物位于 `out/` 目录。
+仓库名：`jay-portfolio`  
+线上地址：`https://<username>.github.io/jay-portfolio/`
 
-### 根域名站点（username.github.io）
+推送 `main` 分支后，GitHub Actions 会自动构建并部署（见 `.github/workflows/deploy.yml`）。
 
-```bash
-npm run build
-```
+### 首次部署前（仅需一次）
 
-将 `out/` 目录内容推送到 `gh-pages` 分支，或在仓库 Settings → Pages 中选择该目录部署。
+在 GitHub 仓库中：
 
-### 项目子路径站点（username.github.io/repo-name）
+1. **Settings → Pages**
+2. **Build and deployment → Source** 选择 **GitHub Actions**
+3. 推送代码到 `main` 分支
 
-构建前设置仓库名作为 base path，例如仓库名为 `Sales_Page`：
+### 本地模拟 GitHub Pages 构建
 
 **Windows (PowerShell):**
 
 ```powershell
-$env:GITHUB_PAGES_BASE_PATH="/Sales_Page"
+$env:GITHUB_PAGES_BASE_PATH="/jay-portfolio"
 npm run build
 ```
 
 **macOS / Linux:**
 
 ```bash
-GITHUB_PAGES_BASE_PATH=/Sales_Page npm run build
+GITHUB_PAGES_BASE_PATH=/jay-portfolio npm run build
 ```
+
+构建产物在 `out/`（已被 `.gitignore` 忽略，不会提交）。
 
 ### 部署检查清单
 
 - `output: "export"` 已启用
-- `images.unoptimized: true` 已启用（静态导出兼容）
-- `public/.nojekyll` 已包含（避免 Jekyll 处理 `_next` 目录）
-- 仅在子路径部署时需要 `GITHUB_PAGES_BASE_PATH`
+- `images.unoptimized: true` 已启用
+- `basePath` / `assetPrefix` 在 CI 中设为 `/jay-portfolio`
+- `public/.nojekyll` 已包含
+- `out/` 不提交，由 Actions 在云端构建
