@@ -4,13 +4,14 @@ import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/Header";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeader } from "@/components/SectionHeader";
+import { assetPath } from "@/lib/assetPath";
 import { dictionary, metrics, profileLinks, projects, resumeDownloadNames, resumePaths, type Locale } from "@/data/site";
 
 export function SalesPage() {
   const [locale, setLocale] = useState<Locale>("en");
   const [wechatNotice, setWechatNotice] = useState<string | null>(null);
   const copy = dictionary[locale];
-  const resumeHref = resumePaths[locale];
+  const resumeHref = assetPath(resumePaths[locale]);
   const resumeDownloadName = resumeDownloadNames[locale];
 
   useEffect(() => {

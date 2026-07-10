@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 import type { Locale, Project } from "@/data/site";
 
 type ProjectCardProps = {
@@ -24,7 +25,7 @@ export function ProjectCard({ project, locale, actions }: ProjectCardProps) {
     <article className="group overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white/[0.72] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-soft-dark">
       <div className="border-b border-black/[0.06] bg-neutral-100/70 p-4 dark:border-white/10 dark:bg-white/[0.03]">
         <Image
-          src={project.screenshot}
+          src={assetPath(project.screenshot)}
           alt={`${projectName} screenshot`}
           width={1280}
           height={800}
@@ -37,7 +38,7 @@ export function ProjectCard({ project, locale, actions }: ProjectCardProps) {
       <div className="p-6 sm:p-7">
         <div className="flex items-center gap-4">
           <Image
-            src={project.logo}
+            src={assetPath(project.logo)}
             alt={`${projectName} logo`}
             width={96}
             height={96}

@@ -305,7 +305,7 @@ export const profileLinks = {
   wechatId: "bestyoucando"
 };
 
-// Resume PDF paths — change filenames here when you update files in /public
+// Resume PDF paths (files live in /public) — change filenames here when updating resumes
 export const resumePaths = {
   en: "/Jay_Wu_Resume_EN.pdf",
   zh: "/Jay_Wu_Resume_CN.pdf"
