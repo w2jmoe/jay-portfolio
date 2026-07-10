@@ -8,6 +8,7 @@ export type Project = {
   logo: string;
   screenshot: string;
   description: LocalizedText;
+  results: LocalizedText;
   impact: LocalizedText;
   links: {
     live?: string;
@@ -75,6 +76,10 @@ export const projects: Project[] = [
       en: "Reduce Agent trial-and-error by selecting the right execution capability.",
       zh: "通过选择正确的能力路径，降低 Agent 试错成本。"
     },
+    results: {
+      en: "17 GitHub Stars · 177 ECU Recommendations",
+      zh: "17 GitHub 星标 · 177 次 ECU 推荐"
+    },
     impact: {
       en: "An open-source API that helps AI Agents choose better capability and tool paths before execution.",
       zh: "面向 Agent 的开源 API，帮助 Agent 在执行任务前选择更合适的能力与工具路径。"
@@ -96,6 +101,10 @@ export const projects: Project[] = [
       en: "Choose the right AI tool with one goal.",
       zh: "输入目标，一步选对工具。"
     },
+    results: {
+      en: "38 Users · 1000+ Tool Recommendations",
+      zh: "38 位用户 · 1000+ 次工具推荐"
+    },
     impact: {
       en: "An AI tool discovery platform that helps people quickly find the best tool for a specific task.",
       zh: "一个面向人类的 AI 工具决策网站，帮助用户快速找到适合当前任务的工具。"
@@ -116,6 +125,10 @@ export const projects: Project[] = [
     description: {
       en: "Care for important people with less pressure and more transparency.",
       zh: "低压力、高透明地关怀与了解重要的人。"
+    },
+    results: {
+      en: "260+ Users · 17.24% Retention · ¥150+ Revenue",
+      zh: "260+ 用户 · 17.24% 留存 · ¥150+ 收入"
     },
     impact: {
       en: "A relationship-focused product that helps people understand the mood, wishes and ongoing activities of those they care about.",
@@ -140,6 +153,10 @@ export const projects: Project[] = [
     description: {
       en: "Complete mobile tasks with one sentence.",
       zh: "用一句话自动完成 APP 操作。"
+    },
+    results: {
+      en: "640 Crowdfunding Followers · ¥1,398 Crowdfunded",
+      zh: "640 人看好 · 众筹金额 ¥1,398"
     },
     impact: {
       en: "An AI wearable that lets users control everyday mobile actions through natural language.",

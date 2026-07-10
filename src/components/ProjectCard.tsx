@@ -59,6 +59,9 @@ export function ProjectCard({ project, locale, actions }: ProjectCardProps) {
         <p className="mt-6 text-base leading-7 text-neutral-700 dark:text-neutral-300">
           {project.description[locale]}
         </p>
+        <p className="mt-4 text-sm font-medium text-neutral-500 dark:text-neutral-400">
+          {project.results[locale]}
+        </p>
         <p className="mt-4 rounded-2xl bg-neutral-100 px-4 py-3 text-sm font-medium leading-6 text-neutral-800 dark:bg-white/[0.08] dark:text-neutral-100">
           {project.impact[locale]}
         </p>
