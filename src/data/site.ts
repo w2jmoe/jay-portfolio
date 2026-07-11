@@ -33,32 +33,32 @@ export const metrics = [
   },
   {
     value: {
+      en: "2 Years",
+      zh: "2 年"
+    },
+    label: {
+      en: "Building Solo",
+      zh: "独立构建"
+    }
+  },
+  {
+    value: {
       en: "400+",
       zh: "400+"
     },
     label: {
-      en: "Users",
-      zh: "用户"
+      en: "Registered Users",
+      zh: "注册用户"
     }
   },
   {
     value: {
-      en: "17",
-      zh: "17"
+      en: "1000+",
+      zh: "1000+"
     },
     label: {
-      en: "GitHub Stars",
-      zh: "GitHub 星标"
-    }
-  },
-  {
-    value: {
-      en: "2+",
-      zh: "2+ 年"
-    },
-    label: {
-      en: "Years Building",
-      zh: "持续构建"
+      en: "Product Recommendations",
+      zh: "产品推荐"
     }
   }
 ] satisfies Array<{ value: LocalizedText; label: LocalizedText }>;
