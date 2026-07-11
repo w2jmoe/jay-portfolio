@@ -145,7 +145,7 @@ export const projects: Project[] = [
   {
     id: "time-bracelet",
     name: {
-      en: "TimeRing",
+      en: "Time bracelet",
       zh: "时间环"
     },
     logo: "/projects/time-bracelet-logo.svg",
