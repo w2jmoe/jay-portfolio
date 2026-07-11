@@ -246,7 +246,7 @@ export const dictionary = {
   },
   zh: {
     meta: {
-      title: "Jay Wu | AI 原生构建者",
+      title: "文杰 | AI 原生构建者",
       description: "Jay Wu 独立完成 AI 产品从想法到上线、验证与持续迭代。"
     },
     nav: {
