@@ -9,30 +9,55 @@ type ProjectCardProps = {
     live: string;
     github: string;
     video: string;
+    crowdfund: string;
     builtIndependently: string;
   };
 };
 
 export function ProjectCard({ project, locale, actions }: ProjectCardProps) {
   const projectName = project.name[locale];
+  const previewHref =
+    project.links.live ?? project.links.github ?? project.links.video;
+  const previewLabel = project.links.live
+    ? actions.live
+    : project.links.github
+      ? actions.github
+      : actions.video;
   const projectActions = [
     { label: actions.live, href: project.links.live },
     { label: actions.github, href: project.links.github },
-    { label: actions.video, href: project.links.video }
+    { label: actions.video, href: project.links.video },
+    { label: actions.crowdfund, href: project.links.crowdfund }
   ].filter((action): action is { label: string; href: string } => Boolean(action.href));
+
+  const screenshot = (
+    <Image
+      src={assetPath(project.screenshot)}
+      alt={`${projectName} — product screenshot`}
+      width={1280}
+      height={800}
+      loading="lazy"
+      decoding="async"
+      className="aspect-[16/10] w-full rounded-[1.35rem] object-cover"
+    />
+  );
 
   return (
     <article className="group overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white/[0.72] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-soft-dark">
       <div className="border-b border-black/[0.06] bg-neutral-100/70 p-4 dark:border-white/10 dark:bg-white/[0.03]">
-        <Image
-          src={assetPath(project.screenshot)}
-          alt={`${projectName} — product screenshot`}
-          width={1280}
-          height={800}
-          loading="lazy"
-          decoding="async"
-          className="aspect-[16/10] w-full rounded-[1.35rem] object-cover"
-        />
+        {previewHref ? (
+          <a
+            href={previewHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${projectName} — ${previewLabel}`}
+            className="block overflow-hidden rounded-[1.35rem] transition opacity-100 hover:opacity-95"
+          >
+            {screenshot}
+          </a>
+        ) : (
+          screenshot
+        )}
       </div>
 
       <div className="p-6 sm:p-7">

@@ -14,6 +14,7 @@ export type Project = {
     live?: string;
     github?: string;
     video?: string;
+    crowdfund?: string;
   };
   wechatHint?: LocalizedText;
 };
@@ -191,7 +192,8 @@ export const projects: Project[] = [
       zh: "一款 AI 智能穿戴设备，通过自然语言即可完成常见手机操作。"
     },
     links: {
-      video: "https://www.bilibili.com/video/BV17yYszKEGR"
+      video: "https://www.bilibili.com/video/BV17yYszKEGR",
+      crowdfund: "https://zhongchou.modian.com/item/148743"
     }
   }
 ];
@@ -238,6 +240,7 @@ export const dictionary = {
       live: "Live Demo",
       github: "GitHub",
       video: "Video",
+      crowdfund: "Crowdfunding",
       builtIndependently: "Built independently"
     },
     journey: [
@@ -310,6 +313,7 @@ export const dictionary = {
       live: "在线演示",
       github: "GitHub",
       video: "视频",
+      crowdfund: "众筹",
       builtIndependently: "独立完成"
     },
     journey: [
