@@ -65,6 +65,34 @@ export const metrics = [
 
 export const projects: Project[] = [
   {
+    id: "ai-native-standard",
+    name: {
+      en: "AI Native Standard",
+      zh: "AI 时代工作能力评估"
+    },
+    logo: "/projects/ai-native-standard-logo.svg",
+    screenshot: "/projects/8.0.jpg",
+    description: {
+      en: "Evaluate AI work capability with real tasks.",
+      zh: "用真实任务评估 AI 工作能力。"
+    },
+    results: {
+      en: "Early Validation",
+      zh: "早期验证中"
+    },
+    impact: {
+      en: "A standards-style assessment product that evaluates AI-era work capability through real tasks, not quizzes.",
+      zh: "用真实任务而非问卷，评估 AI 时代的工作能力，形成可验证的能力标准。"
+    },
+    links: {
+      live: "https://ai-native-standard-demo.vercel.app/"
+    },
+    wechatHint: {
+      en: "Early demo · Mainland China may need a proxy",
+      zh: "早期验证 · 中国大陆地区需开启代理访问"
+    }
+  },
+  {
     id: "wisepick-api",
     name: {
       en: "WisePick API",
