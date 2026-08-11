@@ -10,6 +10,7 @@ import { dictionary, metrics, profileLinks, projects, resumeDownloadNames, resum
 export function SalesPage() {
   const [locale, setLocale] = useState<Locale>("en");
   const [wechatNotice, setWechatNotice] = useState<string | null>(null);
+  const [fbaWechatNotice, setFbaWechatNotice] = useState<string | null>(null);
   const copy = dictionary[locale];
   const resumeHref = assetPath(resumePaths[locale]);
   const resumeDownloadName = resumeDownloadNames[locale];
@@ -42,6 +43,7 @@ export function SalesPage() {
   const handleLocaleChange = (nextLocale: Locale) => {
     setLocale(nextLocale);
     setWechatNotice(null);
+    setFbaWechatNotice(null);
   };
 
   const contactLinks = useMemo(
@@ -60,6 +62,15 @@ export function SalesPage() {
       setWechatNotice(copy.wechat.copiedMessage);
     } catch {
       setWechatNotice(copy.wechat.copyFailed);
+    }
+  };
+
+  const handleFbaWeChatCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(profileLinks.wechatId);
+      setFbaWechatNotice(copy.currentlyBuilding.copiedMessage);
+    } catch {
+      setFbaWechatNotice(copy.currentlyBuilding.copyFailed);
     }
   };
 
@@ -101,7 +112,7 @@ export function SalesPage() {
           </div>
 
           <aside className="rounded-[2rem] border border-black/[0.08] bg-white/60 p-6 shadow-soft dark:border-white/10 dark:bg-white/[0.04] dark:shadow-soft-dark sm:p-8">
-            <p className="text-lg leading-8 text-neutral-700 dark:text-neutral-200">
+            <p className="whitespace-pre-line text-lg leading-8 text-neutral-700 dark:text-neutral-200">
               {copy.hero.proof}
             </p>
           </aside>
@@ -128,6 +139,49 @@ export function SalesPage() {
           >
             {copy.hero.contactCta}
           </a>
+        </div>
+
+        <div className="mt-10 rounded-[2rem] border border-black/[0.08] bg-white/60 p-6 shadow-soft dark:border-white/10 dark:bg-white/[0.04] dark:shadow-soft-dark sm:p-8">
+          <p
+            className={`text-sm font-semibold text-neutral-500 dark:text-neutral-400 ${
+              locale === "zh" ? "tracking-[0.04em]" : "uppercase tracking-[0.28em]"
+            }`}
+          >
+            {copy.currentlyBuilding.eyebrow}
+          </p>
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50 sm:text-3xl">
+            {copy.currentlyBuilding.title}
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-8 text-neutral-700 dark:text-neutral-300 sm:text-lg">
+            {copy.currentlyBuilding.description}
+          </p>
+          <div className="mt-8 border-t border-black/[0.06] pt-8 dark:border-white/10">
+            <p className="whitespace-pre-line text-base leading-8 text-neutral-700 dark:text-neutral-300">
+              {copy.currentlyBuilding.contactPrompt}
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                {copy.currentlyBuilding.wechatLabel}
+              </span>
+              <button
+                type="button"
+                onClick={handleFbaWeChatCopy}
+                aria-label={copy.currentlyBuilding.copyAriaLabel}
+                className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-900 shadow-sm transition hover:border-black/20 hover:bg-neutral-950 hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/20 dark:hover:bg-white dark:hover:text-neutral-950"
+              >
+                {copy.currentlyBuilding.wechatDisplay}
+              </button>
+            </div>
+            {fbaWechatNotice ? (
+              <p
+                role="status"
+                aria-live="polite"
+                className="mt-4 text-sm leading-7 text-neutral-600 dark:text-neutral-300"
+              >
+                {fbaWechatNotice}
+              </p>
+            ) : null}
+          </div>
         </div>
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -213,14 +213,27 @@ export const dictionary = {
       ariaLabel: "Primary navigation"
     },
     hero: {
-      name: "Jay Wu · 武文杰",
+      name: "Jay Wu",
       title: "AI Native Builder",
-      subtitle: "Building AI products from idea to validation.",
+      subtitle: "Building AI products from idea to launch.",
       proof:
-        "I handle product thinking, building, launch, and iteration — focused on shipping useful AI products end to end.",
+        "I focus on AI product validation, application development, and real-world implementation.\nFrom product thinking to building, launch, and iteration, I independently build AI products from 0 to 1.",
       primaryCta: "View Projects",
       githubCta: "GitHub",
       contactCta: "Contact"
+    },
+    currentlyBuilding: {
+      eyebrow: "Currently Building",
+      title: "FDE Builder Academy (FBA)",
+      description:
+        "Helping people turn AI skills into real projects, career opportunities, and business value through hands-on practice.",
+      contactPrompt:
+        "Interested in FDE Builder Academy (FBA)\nor AI project practice?",
+      wechatLabel: "WeChat",
+      wechatDisplay: "bestyoucando (Note: FBA)",
+      copyAriaLabel: "Copy WeChat ID for FBA",
+      copiedMessage: "WeChat ID copied.",
+      copyFailed: "Could not copy. WeChat ID: bestyoucando"
     },
     sections: {
       projectsEyebrow: "Featured Projects",
@@ -290,12 +303,25 @@ export const dictionary = {
     hero: {
       name: "Jay Wu · 武文杰",
       title: "AI 原生构建者",
-      subtitle: "从想法到验证，构建 AI 产品。",
+      subtitle: "从想法到落地，构建 AI 产品。",
       proof:
-        "从产品判断到开发、上线与迭代，都由我独立完成，专注做出真正有用的 AI 产品。",
+        "我专注于 AI 产品验证、应用开发和实际落地，\n从产品判断、开发、上线到迭代，\n独立完成 AI 产品从 0 到 1 的构建。",
       primaryCta: "查看项目",
       githubCta: "GitHub",
       contactCta: "联系我"
+    },
+    currentlyBuilding: {
+      eyebrow: "正在构建",
+      title: "AI 时代企业落地工程师成长计划（FBA）",
+      description:
+        "帮助个人通过 AI 项目实践，获得真实作品、职业机会和商业价值。",
+      contactPrompt:
+        "如果你想了解 FBA落地工程师成长计划，\n或参与 AI 项目实践：",
+      wechatLabel: "微信",
+      wechatDisplay: "bestyoucando（添加备注：FBA）",
+      copyAriaLabel: "复制微信号",
+      copiedMessage: "微信号已复制。",
+      copyFailed: "无法复制，微信号：bestyoucando"
     },
     sections: {
       projectsEyebrow: "精选项目",
