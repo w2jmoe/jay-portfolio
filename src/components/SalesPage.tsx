@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -88,7 +89,7 @@ export function SalesPage() {
       />
 
       <section className="mx-auto flex max-w-7xl flex-col px-5 pb-24 pt-20 sm:px-8 sm:pb-32 sm:pt-28 lg:min-h-[calc(100vh-76px)] lg:justify-center">
-        <div className="fade-in grid gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+        <div className="fade-in grid gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
           <div>
             <p
               className={`text-sm font-semibold text-neutral-500 dark:text-neutral-400 ${
@@ -111,8 +112,8 @@ export function SalesPage() {
             </p>
           </div>
 
-          <aside className="rounded-[2rem] border border-black/[0.08] bg-white/60 p-6 shadow-soft dark:border-white/10 dark:bg-white/[0.04] dark:shadow-soft-dark sm:p-8">
-            <p className="whitespace-pre-line text-lg leading-8 text-neutral-700 dark:text-neutral-200">
+          <aside className="flex min-h-[11rem] items-center rounded-[2rem] border border-black/[0.08] bg-white/60 p-6 shadow-soft dark:border-white/10 dark:bg-white/[0.04] dark:shadow-soft-dark sm:min-h-[12.5rem] sm:p-8">
+            <p className="text-lg leading-8 text-neutral-700 dark:text-neutral-200">
               {copy.hero.proof}
             </p>
           </aside>
@@ -142,45 +143,64 @@ export function SalesPage() {
         </div>
 
         <div className="mt-10 rounded-[2rem] border border-black/[0.08] bg-white/60 p-6 shadow-soft dark:border-white/10 dark:bg-white/[0.04] dark:shadow-soft-dark sm:p-8">
-          <p
-            className={`text-sm font-semibold text-neutral-500 dark:text-neutral-400 ${
-              locale === "zh" ? "tracking-[0.04em]" : "uppercase tracking-[0.28em]"
-            }`}
-          >
-            {copy.currentlyBuilding.eyebrow}
-          </p>
-          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50 sm:text-3xl">
-            {copy.currentlyBuilding.title}
-          </h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-neutral-700 dark:text-neutral-300 sm:text-lg">
-            {copy.currentlyBuilding.description}
-          </p>
-          <div className="mt-8 border-t border-black/[0.06] pt-8 dark:border-white/10">
-            <p className="whitespace-pre-line text-base leading-8 text-neutral-700 dark:text-neutral-300">
-              {copy.currentlyBuilding.contactPrompt}
-            </p>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-                {copy.currentlyBuilding.wechatLabel}
-              </span>
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
+            <div className="min-w-0 flex-1">
+              <p
+                className={`text-sm font-semibold text-neutral-500 dark:text-neutral-400 ${
+                  locale === "zh" ? "tracking-[0.04em]" : "uppercase tracking-[0.28em]"
+                }`}
+              >
+                {copy.currentlyBuilding.eyebrow}
+              </p>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50 sm:text-3xl">
+                {copy.currentlyBuilding.title}
+              </h2>
+              <p className="mt-4 text-base leading-8 text-neutral-700 dark:text-neutral-300 sm:text-lg">
+                {copy.currentlyBuilding.description}
+              </p>
               <button
                 type="button"
                 onClick={handleFbaWeChatCopy}
                 aria-label={copy.currentlyBuilding.copyAriaLabel}
-                className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-900 shadow-sm transition hover:border-black/20 hover:bg-neutral-950 hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/20 dark:hover:bg-white dark:hover:text-neutral-950"
+                className="mt-5 rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-900 shadow-sm transition hover:border-black/20 hover:bg-neutral-950 hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/20 dark:hover:bg-white dark:hover:text-neutral-950"
               >
                 {copy.currentlyBuilding.wechatDisplay}
               </button>
+              {fbaWechatNotice ? (
+                <p
+                  role="status"
+                  aria-live="polite"
+                  className="mt-3 text-sm leading-7 text-neutral-600 dark:text-neutral-300"
+                >
+                  {fbaWechatNotice}
+                </p>
+              ) : null}
             </div>
-            {fbaWechatNotice ? (
-              <p
-                role="status"
-                aria-live="polite"
-                className="mt-4 text-sm leading-7 text-neutral-600 dark:text-neutral-300"
+
+            <div className="flex shrink-0 flex-col items-center gap-3 self-center sm:self-auto">
+              <a
+                href={copy.currentlyBuilding.bookHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block overflow-hidden rounded-2xl shadow-sm transition hover:opacity-95"
               >
-                {fbaWechatNotice}
-              </p>
-            ) : null}
+                <Image
+                  src={assetPath(copy.currentlyBuilding.bookImage)}
+                  alt={copy.currentlyBuilding.bookAlt}
+                  width={280}
+                  height={400}
+                  className="h-auto w-[132px] rounded-2xl object-cover"
+                />
+              </a>
+              <a
+                href={copy.currentlyBuilding.bookHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-neutral-500 underline-offset-4 transition hover:text-neutral-950 hover:underline dark:text-neutral-400 dark:hover:text-neutral-100"
+              >
+                {copy.currentlyBuilding.bookCta}
+              </a>
+            </div>
           </div>
         </div>
 

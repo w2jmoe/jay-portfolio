@@ -216,24 +216,23 @@ export const dictionary = {
       name: "Jay Wu",
       title: "AI Native Builder",
       subtitle: "Building AI products from idea to launch.",
-      proof:
-        "I focus on AI product validation, application development, and real-world implementation.\nFrom product thinking to building, launch, and iteration, I independently build AI products from 0 to 1.",
+      proof: "Independently taking AI products from 0 to 1 — validate, ship, iterate.",
       primaryCta: "View Projects",
       githubCta: "GitHub",
       contactCta: "Contact"
     },
     currentlyBuilding: {
       eyebrow: "Currently Building",
-      title: "FDE Builder Academy (FBA)",
-      description:
-        "Helping people turn AI skills into real projects, career opportunities, and business value through hands-on practice.",
-      contactPrompt:
-        "Interested in FDE Builder Academy (FBA)\nor AI project practice?",
-      wechatLabel: "WeChat",
-      wechatDisplay: "bestyoucando (Note: FBA)",
+      title: "FDE Builder Academy",
+      description: "Helping people turn AI skills into real projects.",
+      wechatDisplay: "WeChat: bestyoucando (Note: FBA)",
       copyAriaLabel: "Copy WeChat ID for FBA",
       copiedMessage: "WeChat ID copied.",
-      copyFailed: "Could not copy. WeChat ID: bestyoucando"
+      copyFailed: "Could not copy. WeChat ID: bestyoucando",
+      bookImage: "/ai-project-practice-guide.jpg",
+      bookHref: "https://m.tb.cn/h.8hesRgL?tk=Nsj0TZX3sUZ",
+      bookCta: "Buy on Xianyu",
+      bookAlt: "AI Project Practice Guide"
     },
     sections: {
       projectsEyebrow: "Featured Projects",
@@ -304,24 +303,23 @@ export const dictionary = {
       name: "Jay Wu · 武文杰",
       title: "AI 原生构建者",
       subtitle: "从想法到落地，构建 AI 产品。",
-      proof:
-        "我专注于 AI 产品验证、应用开发和实际落地，\n从产品判断、开发、上线到迭代，\n独立完成 AI 产品从 0 到 1 的构建。",
+      proof: "独立完成 AI 产品从 0 到 1 — 验证、上线、迭代。",
       primaryCta: "查看项目",
       githubCta: "GitHub",
       contactCta: "联系我"
     },
     currentlyBuilding: {
       eyebrow: "正在构建",
-      title: "AI 时代企业落地工程师成长计划（FBA）",
-      description:
-        "帮助个人通过 AI 项目实践，获得真实作品、职业机会和商业价值。",
-      contactPrompt:
-        "如果你想了解 FBA落地工程师成长计划，\n或参与 AI 项目实践：",
-      wechatLabel: "微信",
-      wechatDisplay: "bestyoucando（添加备注：FBA）",
+      title: "FDE落地工程师成长计划",
+      description: "帮助个人通过AI项目实践获得真实作品。",
+      wechatDisplay: "微信：bestyoucando（备注：FBA）",
       copyAriaLabel: "复制微信号",
       copiedMessage: "微信号已复制。",
-      copyFailed: "无法复制，微信号：bestyoucando"
+      copyFailed: "无法复制，微信号：bestyoucando",
+      bookImage: "/ai-project-practice-guide.jpg",
+      bookHref: "https://m.tb.cn/h.8hesRgL?tk=Nsj0TZX3sUZ",
+      bookCta: "在闲鱼购买",
+      bookAlt: "AI 项目实战指南"
     },
     sections: {
       projectsEyebrow: "精选项目",
