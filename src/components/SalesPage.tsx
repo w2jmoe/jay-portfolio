@@ -182,7 +182,7 @@ export function SalesPage() {
                 href={copy.currentlyBuilding.bookHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block overflow-hidden rounded-2xl shadow-sm transition hover:opacity-95"
+                className="block origin-center rounded-2xl shadow-sm transition duration-500 ease-out hover:scale-[1.06] hover:shadow-md"
               >
                 <Image
                   src={assetPath(copy.currentlyBuilding.bookImage)}

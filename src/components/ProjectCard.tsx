@@ -38,7 +38,7 @@ export function ProjectCard({ project, locale, actions }: ProjectCardProps) {
       height={800}
       loading="lazy"
       decoding="async"
-      className="aspect-[16/10] w-full rounded-[1.35rem] object-cover"
+      className="aspect-[16/10] w-full rounded-[1.35rem] object-cover transition duration-500 ease-out group-hover/preview:scale-[1.03]"
     />
   );
 
@@ -51,12 +51,14 @@ export function ProjectCard({ project, locale, actions }: ProjectCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${projectName} — ${previewLabel}`}
-            className="block overflow-hidden rounded-[1.35rem] transition opacity-100 hover:opacity-95"
+            className="group/preview block overflow-hidden rounded-[1.35rem]"
           >
             {screenshot}
           </a>
         ) : (
-          screenshot
+          <div className="group/preview overflow-hidden rounded-[1.35rem]">
+            {screenshot}
+          </div>
         )}
       </div>
 
