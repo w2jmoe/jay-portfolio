@@ -247,25 +247,27 @@ export function SalesPage() {
           description={copy.sections.journeyDescription}
           locale={locale}
         />
-        <div className="mx-auto mt-16 grid max-w-5xl gap-5 md:grid-cols-3">
+        <div className="mx-auto mt-16 flex max-w-5xl flex-col items-stretch gap-5 md:flex-row md:gap-0">
           {copy.journey.map((item, index) => (
-            <div
-              key={item.year}
-              className="relative rounded-[1.75rem] border border-black/[0.08] bg-white/[0.72] p-7 shadow-sm dark:border-white/10 dark:bg-white/[0.04]"
-            >
-              <p className={`text-sm font-semibold text-neutral-500 dark:text-neutral-400 ${locale === "en" ? "uppercase tracking-[0.2em]" : ""}`}>
-                {item.year}
-              </p>
-              <h3 className="mt-5 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
-                {item.title}
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-neutral-600 dark:text-neutral-300">
-                {item.description}
-              </p>
+            <div key={item.year} className="contents">
+              <div className="w-full rounded-[1.75rem] border border-black/[0.08] bg-white/[0.72] p-7 shadow-sm dark:border-white/10 dark:bg-white/[0.04] md:min-w-0 md:flex-1">
+                <p className={`text-sm font-semibold text-neutral-500 dark:text-neutral-400 ${locale === "en" ? "uppercase tracking-[0.2em]" : ""}`}>
+                  {item.year}
+                </p>
+                <h3 className="mt-5 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-neutral-600 dark:text-neutral-300">
+                  {item.description}
+                </p>
+              </div>
               {index < copy.journey.length - 1 ? (
-                <span className="absolute -right-4 top-1/2 hidden -translate-y-1/2 text-neutral-300 dark:text-neutral-600 md:block">
-                  ↓
-                </span>
+                <div
+                  aria-hidden
+                  className="flex shrink-0 items-center justify-center self-center md:self-stretch"
+                >
+                  <span className="h-6 w-px bg-neutral-200 dark:bg-neutral-700 md:h-px md:w-6" />
+                </div>
               ) : null}
             </div>
           ))}
