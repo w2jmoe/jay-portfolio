@@ -216,7 +216,7 @@ export const dictionary = {
       name: "Jay Wu",
       title: "AI Native Builder",
       subtitle: "Building AI products from idea to launch.",
-      proof: "Independently taking AI products from 0 to 1 — validate, ship, iterate.",
+      proof: "Find the problem. Build the thing. Test it in reality. ✨️",
       primaryCta: "View Projects",
       githubCta: "GitHub",
       contactCta: "Contact"
