@@ -24,8 +24,8 @@ export const siteUrl = "https://w2jmoe.github.io/jay-portfolio";
 export const metrics = [
   {
     value: {
-      en: "8",
-      zh: "8"
+      en: "9",
+      zh: "9"
     },
     label: {
       en: "Products Built",
@@ -34,8 +34,8 @@ export const metrics = [
   },
   {
     value: {
-      en: "2 Years",
-      zh: "2 年"
+      en: "2.5 Years",
+      zh: "2.5 年"
     },
     label: {
       en: "Building Solo",
