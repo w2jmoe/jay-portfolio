@@ -303,7 +303,7 @@ export const dictionary = {
       name: "Jay Wu · 武文杰",
       title: "AI 原生构建者",
       subtitle: "从想法到落地，构建 AI 产品。",
-      proof: "独立完成 AI 产品从 0 到 1 — 验证、上线、迭代。",
+      proof: "找到问题，做出东西，用现实验证 ✨️",
       primaryCta: "查看项目",
       githubCta: "GitHub",
       contactCta: "联系我"
