@@ -311,7 +311,7 @@ export const dictionary = {
     currentlyBuilding: {
       eyebrow: "正在构建",
       title: "FDE落地工程师成长计划",
-      description: "帮助个人通过AI项目实践获得真实作品。",
+      description: "帮助个人通过 AI 项目 实践获得真实作品。",
       wechatDisplay: "微信：bestyoucando（备注：FBA）",
       copyAriaLabel: "复制微信号",
       copiedMessage: "微信号已复制。",
